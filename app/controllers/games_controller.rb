@@ -7,9 +7,8 @@ class GamesController < ApplicationController
   end
 
   def score
-    @test_word = params[:word]
+    @test_word = params[:word].upcase
     @sample_arr = params[:letters]
-
     test_arr = @test_word.split("")
     test_arr.each do |char|
       if !@sample_arr.include? char
